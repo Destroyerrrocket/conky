@@ -166,6 +166,35 @@ static conky::simple_config_setting<bool> disable_auto_reload(
 /* two strings for internal use */
 static char *tmpstring1, *tmpstring2;
 
+/*
+ * the list of the only current output, when inside draw_text,
+ * else we iterate over each active outputs.
+ */
+std::vector<conky::display_output_base *> current_display_outputs;
+
+static inline std::vector<conky::display_output_base *> &display_outputs() {
+  if (current_display_outputs.size())
+    return current_display_outputs;
+  return conky::active_display_outputs;
+}
+
+static inline conky::display_output_base *display_output() {
+  if (current_display_outputs.size())
+    return current_display_outputs[0];
+//XXX; not really what intended yet...
+  return conky::active_display_outputs[0];
+  //return nullptr;
+}
+
+static inline void unset_display_output() {
+  current_display_outputs.clear();
+}
+
+static inline void set_display_output(conky::display_output_base *output) {
+  current_display_outputs.clear();
+  current_display_outputs.push_back(output);
+}
+
 enum spacer_state { NO_SPACER = 0, LEFT_SPACER, RIGHT_SPACER };
 template <>
 conky::lua_traits<spacer_state>::Map conky::lua_traits<spacer_state>::map = {
