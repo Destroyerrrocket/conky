@@ -75,7 +75,6 @@ class display_output_x11 : public display_output_base {
 
   virtual void begin_draw_stuff() { }
   virtual void end_draw_stuff();
-  virtual void swap_buffers();
   virtual void clear_text(int exposures);
   virtual void load_fonts(bool utf8);
 
