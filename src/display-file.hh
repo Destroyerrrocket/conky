@@ -36,9 +36,7 @@ namespace conky {
  * A base class for file display output.
  */
 class display_output_file : public display_output_base {
-
  public:
-
   explicit display_output_file(const std::string &name_);
 
   virtual ~display_output_file() {}
