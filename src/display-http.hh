@@ -36,9 +36,7 @@ namespace conky {
  * A base class for HTTP display output.
  */
 class display_output_http : public display_output_base {
-
  public:
-
   explicit display_output_http();
 
   virtual ~display_output_http() {}

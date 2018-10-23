@@ -36,9 +36,7 @@ namespace conky {
  * A base class for ncurses display output.
  */
 class display_output_ncurses : public display_output_console {
-
  public:
-
   explicit display_output_ncurses();
 
   virtual ~display_output_ncurses() {}

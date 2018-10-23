@@ -36,9 +36,7 @@ namespace conky {
  * A base class for console display output.
  */
 class display_output_console : public display_output_base {
-
  public:
-
   explicit display_output_console(const std::string &name_);
 
   virtual ~display_output_console() {}

@@ -36,9 +36,7 @@ namespace conky {
  * A base class for X11 display output.
  */
 class display_output_x11 : public display_output_base {
-
  public:
-
   explicit display_output_x11();
 
   virtual ~display_output_x11() {}
